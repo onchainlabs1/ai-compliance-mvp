@@ -14,3 +14,8 @@ dist/
 # compose volumes
 chroma_data/
 postgres_data/
+
+# build artifacts
+-f
+-t
+.build.swp
