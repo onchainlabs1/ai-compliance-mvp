@@ -11,3 +11,7 @@ pytest
 flake8
 black
 streamlit>=1.32
+jinja2
+pydantic[dotenv]
+gitpython
+cyclonedx-bom
