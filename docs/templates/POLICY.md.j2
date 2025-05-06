@@ -1,0 +1,25 @@
+# ISO/IEC 42001 Policy
+Generated: {{ now_iso }}
+
+## 1 • Governance
+
+| Control                          | Status |
+|----------------------------------|--------|
+| Steering committee in place      | ✔️ |
+| Review cadence                   | Quarterly |
+| OpenSSF Scorecard (0-10)         | 8.3 |
+
+## 2 • Supply-chain vulnerabilities
+
+| Severity | Count |
+|----------|------:|
+| Critical | {{ trivy.critical }} |
+| High     | {{ trivy.high }} |
+
+> **Overall risk:** **{{ risk }}**
+
+---
+
+## 3 • Model lifecycle
+
+*(extend this section as the scanner grows)*

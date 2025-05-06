@@ -1,14 +1,17 @@
+version: "3.9"
+
 services:
+
   github-mcp:
-    image: ghcr.io/a16z-infra/github-mcp-server:0.3.3   # imagem pública pronta
-    platform: linux/amd64                               # Apple Silicon precisa
+    image: ghcr.io/a16z-infra/github-mcp-server:0.2.5
+    platform: linux/amd64
     command: ["--http", "--port", "8080"]
     environment:
       GITHUB_TOKEN: ${GITHUB_TOKEN}
     ports: ["9000:8080"]
 
   sentry:
-    image: ghcr.io/a16z-infra/sentry-mcp-server:0.3.3
+    image: ghcr.io/a16z-infra/sentry-mcp-server:0.2.5
     platform: linux/amd64
     command: ["--http", "--port", "8080", "--auth-token", "${SENTRY_AUTH_TOKEN}"]
     ports: ["9020:8080"]
