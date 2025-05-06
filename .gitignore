@@ -1,0 +1,16 @@
+# python
+__pycache__/
+*.py[cod]
+.venv/
+.env
+# docker / build
+*.log
+*.tar
+*.egg-info/
+dist/
+# vscode / cursor / ide
+.vscode/
+.idea/
+# compose volumes
+chroma_data/
+postgres_data/

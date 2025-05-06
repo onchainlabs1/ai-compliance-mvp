@@ -1,0 +1,26 @@
+services:
+  github-mcp:
+    image: local/github-mcp-server
+    command: ["node", "dist/index.js", "--http", "--port", "8080"]
+    ports: ["9000:8080"]
+
+  sentry:
+    image: local/sentry-mcp-server
+    command: ["mcp-server-sentry", "--no-auth"]
+    ports: ["9020:8080"]
+
+  app:
+    build: .
+    env_file: .env
+    ports: ["8501:8501"]
+    depends_on: [github-mcp, sentry, postgres]
+
+  chroma:
+    image: chromadb/chroma:0.4.24
+    ports: ["8000:8000"]
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_PASSWORD: pgpasswd
+    ports: ["5432:5432"]

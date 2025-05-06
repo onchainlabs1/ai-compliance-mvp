@@ -1,0 +1,18 @@
+# Exclui tudo que não precisa ir para o build da app
+.venv
+__pycache__/
+*.pyc
+*.pkl
+.git
+.sha256*
+# evita que BuildKit escreva arquivos na raiz
+exporting
+extracting
+loading
+resolve
+sending
+transferring
+sha256:*
+# arquivos pico/nano acidentais
+[app]
+=
