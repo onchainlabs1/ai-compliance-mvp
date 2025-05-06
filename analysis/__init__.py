@@ -1,14 +1,15 @@
-# analysis/__init__.py
 """
-Public façade for the repo-scanner helpers.
-
-Exports
--------
-clone_repo(url: str, token: str | None = None) -> pathlib.Path
-generate_sbom(repo_path: pathlib.Path)           -> dict
+analysis package
+================
+Thin public façade that re-exports the useful helpers.
 """
 
-from .repo_scan.clone import clone_repo        # ← corrige o caminho
-from .repo_scan.sbom import generate_sbom      # ← idem
+from .repo_scan.clone import clone_repo
+from .repo_scan.sbom import generate_sbom
+from .report_builder import render_policy                 # ← NEW export
 
-__all__: list[str] = ["clone_repo", "generate_sbom"]
+__all__: list[str] = [
+    "clone_repo",
+    "generate_sbom",
+    "render_policy",
+]
