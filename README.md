@@ -2,6 +2,8 @@
 
 A fully‑automated **CI/CD review pipeline** powered by **CrewAI** agents and the **Model Context Protocol (MCP)** with **AI Regulatory Compliance** analysis.
 
+> ⚠️ **DEVELOPMENT STATUS**: This project is under active development. Some features may be experimental or require additional configuration. Use in production environments at your own discretion.
+
 ![demo gif](docs/demo.gif)
 
 ---
@@ -68,7 +70,7 @@ python -m crew_setup "https://github.com/some/repo/pull/123"
 streamlit run app.py
 
 # OR run the dedicated compliance analysis interface
-streamlit run compliance_app_fixed.py
+streamlit run compliance_app_fixed.py  # Note: We currently use the fixed version for stability
 ```
 
 ## 🔧 Configuration
@@ -106,8 +108,19 @@ The new compliance module provides:
 Access the compliance features through:
 
 ```bash
-streamlit run compliance_app_fixed.py
+streamlit run compliance_app_fixed.py  # Using the fixed version due to syntax issues in compliance_app.py
 ```
+
+## 🚧 Development Status
+
+This project is in active development with the following current limitations:
+
+- The compliance analysis feature requires Python 3.10+ and may encounter rendering issues in some terminals
+- We're currently using compliance_app_fixed.py instead of compliance_app.py due to syntax issues
+- CrewAI compatibility with Python 3.10 is handled through patches (fix_crewai.py, patch_typing.py)
+- Some features may change or be refactored as the project evolves
+
+We welcome feedback and contributions to help improve stability and feature completeness!
 
 ## 🌐 Deployment
 
